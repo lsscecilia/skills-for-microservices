@@ -36,6 +36,21 @@ Collections of skills to allow AI agents to understand and work with microservic
   **Each spec file includes**: purpose, business domain ownership (with ⚠ for misplaced logic), API endpoints, DB schema, events, outbound calls,   
   key business rules, tech debt, legacy code, and a "Context for AI Agents" section.                                                                
                                                                                                                                                     
-  **How to use the output**: Reference the `.md` files at the start of any Claude session — one file gives full context for that service without    
+  **How to use the output**: Reference the `.md` files at the start of any Claude session — one file gives full context for that service without
   re-explaining anything.
+
+  ---
+
+  ## `/update-all` — Update All Repos
+
+  For when you want to sync all microservice repos at once — checkout master/main and pull latest.
+
+  **What it does**:
+  1. Asks for (or accepts) the parent folder containing all your repos
+  2. Dynamically discovers every git repo inside it
+  3. Detects whether each uses `master` or `main`
+  4. Checks out the default branch and pulls latest for each
+  5. Reports what succeeded and flags anything that needs manual attention
+
+  **You need**: The path to your parent folder (e.g. `~/projects`).
 
